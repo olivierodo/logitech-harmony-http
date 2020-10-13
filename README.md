@@ -11,7 +11,7 @@ Usage:
 
 ```sh 
 npm i
-export HUB_HOST= 192.168.X.XXX
+export HUB_HOST=192.168.X.XXX
 npm start
 ```
 
@@ -24,3 +24,15 @@ npm start
 | `PORT`           | port of the http server                                              | 8080      |
 
 
+Then let's say you have a device named `ac`
+
+You will be able to controle it with the following api :
+
+```
+curl --request POST \
+  --url http://localhost:8080/ac/action \
+  --header 'content-type: application/json' \
+  --data '{
+    "type": "os"
+  }'
+```
